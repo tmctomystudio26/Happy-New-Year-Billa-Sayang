@@ -394,7 +394,15 @@
 
     // Buka Envelope
     function bukaEnvelope() {
-      audio.play();
+      // Initialize audio if not already done
+      if (!audio) {
+        const linkmp3 = document.getElementById('linkmp3');
+        linkmp3.src = 'https://raw.githubusercontent.com/tmctomystudio26/github.musik.io/main/Cut--%20TAKKAN%20TERGANTI%20-%20KANGEN%20BAND%20COVER%20by%20AINI%20SPEED%20UP%20-%20Seventeen_17_1.mp3';
+        audio = new Audio(linkmp3.src);
+      }
+      if (audio && typeof audio.play === 'function') {
+        audio.play().catch(() => {});
+      }
       const envelope = document.getElementById('envelope');
       envelope.classList.remove('close');
       envelope.classList.add('open');
