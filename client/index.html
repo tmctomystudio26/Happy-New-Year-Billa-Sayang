@@ -40,7 +40,7 @@
   body {color:#fff;overflow-x:hidden;position:relative;font-family:'Montserrat',sans-serif;background:#000;z-index:1;}
   .background-overlay {animation: jj 12s infinite alternate;position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at center,rgba(233,30,99,0.3),rgba(136,14,79,0.8));opacity:0.5;z-index:0;}
   @keyframes jj{0%{transform:scale(1);}50%{transform:scale(1.15);}100%{transform:scale(1);}}
-  .kotak{margin:0 auto;margin-top:130px;transform:scale(0);transition:all .7s ease;background:rgba(255,255,255,.02);backdrop-filter:blur(10px);border-radius:8px 33px 8px 33px;box-shadow:0 8px 32px rgba(0,0,0,0.5);border:2.5px solid rgba(255,255,255,0.8);padding:0;text-align:center;max-width:100%;width:420px;min-height:200px;position:relative;z-index:1}
+  .kotak{margin:0 auto;margin-top:130px;transform:scale(0);transition:all .7s ease;background:rgba(255,255,255,.02);border-radius:8px 33px 8px 33px;box-shadow:0 8px 32px rgba(0,0,0,0.5);border:2.5px solid rgba(255,255,255,0.8);padding:0;text-align:center;max-width:100%;width:420px;min-height:200px;position:relative;z-index:1}
   #envelope{margin:0 auto;margin-top:150px;position:relative;width:200px;height:140px;border-bottom-left-radius:12px;border-bottom-right-radius:12px;top:140px;background:var(--color-flap);box-shadow:0 8px 30px rgba(233,30,99,0.4);animation:float 4s ease-in-out infinite;}
   .front{position:absolute;width:0;height:0;z-index:3}
   .flap{border-left:100px solid transparent;border-right:100px solid transparent;border-bottom:70px solid transparent;border-top:70px solid var(--color-flap);transform-origin:top;pointer-events:none;}
@@ -145,7 +145,7 @@
   .burst{animation:fireworkBurst 2s ease-out forwards;}
 
   /* Modal Balasan */
-  .modal-balasan{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,0.75);backdrop-filter:blur(10px);border-radius:15px;padding:0;z-index:100;min-width:85%;max-width:500px;box-shadow:0 10px 40px rgba(0,0,0,0.3);animation:modalAppear 0.3s ease;}
+  .modal-balasan{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,0.75);border-radius:15px;padding:0;z-index:100;min-width:85%;max-width:500px;box-shadow:0 10px 40px rgba(0,0,0,0.3);animation:modalAppear 0.3s ease;}
   @keyframes modalAppear{0%{transform:translate(-50%,-50%) scale(0.8);opacity:0}100%{transform:translate(-50%,-50%) scale(1);opacity:1}}
   .modal-content{padding:2rem;position:relative;background:rgba(255,255,255,0.8);}
   .btn-tutup{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;cursor:pointer;color:#666;transition:color 0.3s;}
