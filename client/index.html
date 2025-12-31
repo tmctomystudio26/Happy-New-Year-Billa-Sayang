@@ -3,6 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <meta name="color-scheme" content="dark">
   <title>💕Billa Sayang - Happy New Year</title>
   <meta name="description" content="Selamat Tahun Baru 2026 Sayangku Billa">
     <meta name="keywords" content="Selamat Tahun Baru 2026 Sayangku Billa">
@@ -563,43 +565,47 @@
 
     const scrollContainer = document.getElementById("containerPesan");
 
-    // Fungsi untuk membuat efek kembang api romantis
+    // Fungsi untuk membuat efek kembang api romantis (dioptimasi untuk performa)
     function buatKembangApi() {
       const container = document.getElementById('fireworksContainer');
-      const duration = 3500; // Durasi kembang api
+      const duration = 3500;
       let particleCount = 0;
+      const maxParticles = 50; // Limit particles untuk mencegah lag
 
       function createParticle() {
+        if (particleCount >= maxParticles) return;
+        
         const particle = document.createElement('div');
         particle.className = 'firework ' + (Math.random() > 0.5 ? 'firework-pink' : 'firework-red');
 
-        // Random posisi dari center
         const x = window.innerWidth / 2;
         const y = window.innerHeight / 2;
         particle.style.left = x + 'px';
         particle.style.top = y + 'px';
 
-        // Random arah dan jarak
         const angle = Math.random() * Math.PI * 2;
         const distance = 100 + Math.random() * 200;
         const tx = Math.cos(angle) * distance;
-        const ty = Math.sin(angle) * distance - 150; // Bias ke atas
+        const ty = Math.sin(angle) * distance - 150;
 
         particle.style.setProperty('--tx', tx + 'px');
         particle.style.setProperty('--ty', ty + 'px');
 
         particle.classList.add('burst');
         container.appendChild(particle);
+        particleCount++;
 
-        setTimeout(() => particle.remove(), 2000);
+        particle.addEventListener('animationend', () => {
+          particle.remove();
+          particleCount--;
+        });
       }
 
-      // Create particles terus-menerus selama durasi
       const interval = setInterval(() => {
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 4; i++) {
           createParticle();
         }
-      }, 100);
+      }, 120);
 
       setTimeout(() => {
         clearInterval(interval);
